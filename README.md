@@ -1,5 +1,6 @@
 # Transformations-using-GLFW
 This Repo illustrate using GLFW to handel Transformation of an object using Keyboard Keys 
+ ![](glfw.gif)
 
 i start follow [GLFW_Guide](https://www.glfw.org/docs/latest/quick.html)  to initilize GLFW library
 

@@ -9,7 +9,7 @@ float screenWidth = 700;
 float screenHieght = 700;
 float step = 0.1f;
 float angle = 20.f;
-float scale = .2f;
+float scale = .3f;
 float x = 0.;
 float y = 0.;
 void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods);

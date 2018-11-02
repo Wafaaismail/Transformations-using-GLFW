@@ -23,15 +23,6 @@ float scale = .3f;
 float x = 0.;
 float y = 0.;
 GLuint vertexbuffer ;
-void gladPointers()
-{
-
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-	{
-		std::cout << "Failed to initialize GLAD" << std::endl;
-		return;
-	}
-}
 const GLfloat vertices[] = {
 	0.f, 0.f, 0.0f,
 	0.5f, 0.0f, 0.0f,
@@ -40,10 +31,8 @@ const GLfloat vertices[] = {
 
 void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods);
 void drawTriangle();
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-	glViewport(0.0f, 0.0f, screenWidth, screenHieght); //draw openGl in pixels
-}
+void gladPointers();
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
 int main(int &argc, char **argv) {
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -176,4 +165,17 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods
 	default:
 		break;
 	}
+}
+void gladPointers()
+{
+
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		std::cout << "Failed to initialize GLAD" << std::endl;
+		return;
+	}
+}
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	glViewport(0.0f, 0.0f, screenWidth, screenHieght); //draw openGl in pixels
 }
